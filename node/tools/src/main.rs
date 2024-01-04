@@ -100,10 +100,11 @@ async fn main() -> anyhow::Result<()> {
     // Initialize the storage.
     tracing::debug!("Initializing storage.");
 
+    let database_path = Path::new("database").join(configs.executor.server_addr.to_string());
     let storage = RocksdbStorage::new(
         ctx,
         &configs.executor.genesis_block,
-        Path::new("./database"),
+        &database_path,
     );
     let storage = Arc::new(storage.await.context("RocksdbStorage::new()")?);
     let mut executor = Executor::new(ctx, configs.executor, configs.node_key, storage.clone())
