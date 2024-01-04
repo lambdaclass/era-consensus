@@ -1,5 +1,5 @@
 # Running a node
 
-1. Create a `.txt` file in the root of tools crate, containing the addresses of where the node will run, in the format `IP:PORT` each address has to be a separate line.
-2. Do `make node-configs`. This will create a directory called `node-configs` with one folder per address in the `.txt` file with the necessary config files for the node.
-3. Execute `make run-node IP=<NODE_IP>` the default value for this command would be `127.0.0.1:8000`. Note that this command will take control of the terminal.
+1. Generate a `.txt` file in the root directory of the tools crate, containing node addresses in the format `IP:PORT`, with each address on a separate line.
+2. Run `make node-configs`. This command will establish a directory named `node-configs` and create a folder for each address listed in the `.txt` file, providing the necessary configuration files for the respective node.
+3. Execute `make run-node IP=<NODE_IP>`. The default value for this command would be `127.0.0.1:8000`. Note that running this command will take control of the terminal.
